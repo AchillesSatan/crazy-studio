@@ -51,6 +51,19 @@ gem 'rails-erd'
 # Use unicorn as the app server
 gem 'unicorn'
 
+group :developemnt, :test do
+  gem 'delorean'
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'spork', '1.0.0rc3'
+  gem 'guard'
+  gem 'guard-spork'
+  gem 'guard-rspec'
+  gem 'rb-fsevent'
+  gem 'growl'
+  gem 'factory_girl_rails'
+end
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
