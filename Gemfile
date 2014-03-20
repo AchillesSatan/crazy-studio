@@ -34,6 +34,10 @@ end
 
 gem 'setty', github: "AchillesSatan/setty"
 
+gem 'rack-cache'
+gem 'dalli'
+gem 'kgio'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

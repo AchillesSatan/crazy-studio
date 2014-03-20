@@ -1,0 +1,12 @@
+common: &common
+  session_memcache_server: localhost
+  cache_memcache_server: localhost
+
+development:
+  <<: *common
+
+test:
+  <<: *common
+
+production:
+  <<: *common
