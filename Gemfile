@@ -45,6 +45,10 @@ gem 'kgio'
 
 gem 'rails-erd'
 
+gem 'devise'
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'cancan'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
