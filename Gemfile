@@ -8,6 +8,10 @@ gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+gem 'bootstrap-sass'
+
+# Use the slim
+gem 'slim-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -38,6 +42,8 @@ gem 'setty', github: "AchillesSatan/setty"
 gem 'rack-cache'
 gem 'dalli'
 gem 'kgio'
+
+gem 'rails-erd'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
