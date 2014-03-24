@@ -14,6 +14,7 @@ module CrazyStudio
 
     config.cache_store = :dalli_store, Setty.base.cache_memcache_server, {namespace: "crazy-studio-#{Rails.env}"}
 
+    config.action_mailer.default_url_options = { :host => 'localhost:3000' }
     # client = Dalli::Client.new((ENV["MEMCACHIER_SERVERS"] || "").split(","),
     #                            :username => ENV["MEMCACHIER_USERNAME"],
     #                            :password => ENV["MEMCACHIER_PASSWORD"],
