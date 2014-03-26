@@ -250,6 +250,12 @@ a:focus {
     3D positioning along Z axis.
 */
 
+#bored_title {
+    font-size: 140px;
+    text-align: center;
+    margin-top: 150px;
+}
+
 #title {
     padding: 0;
 }
@@ -300,6 +306,11 @@ a:focus {
 
 #its_description {
     font-size: 40px;
+}
+
+#its_author {
+    font-size: 35px;
+    text-align: right;
 }
 
 /*
