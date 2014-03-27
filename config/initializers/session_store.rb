@@ -11,5 +11,5 @@ params = {
   namespace: "crazy-studio-#{Rails.env}"
 }
 
-CrazyStudio::Application.config.session_store ActionDispatch::Session::CacheStore
-CrazyStudio::Application.config.session_options = params
+# CrazyStudio::Application.config.session_store ActionDispatch::Session::CacheStore
+# CrazyStudio::Application.config.session_options = params
