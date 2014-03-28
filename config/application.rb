@@ -12,7 +12,7 @@ module CrazyStudio
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    # とりあえず  
+    # 是否防止CSRF 攻击 
     # config.action_controller.allow_forgery_protection = false
 
     # config.cache_store = :dalli_store, Setty.base.cache_memcache_server, {namespace: "crazy-studio-#{Rails.env}"}
