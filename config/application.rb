@@ -21,7 +21,8 @@ module CrazyStudio
 
     config.assets.enabled = true
 
-    config.assets.initialize_on_precompile = false
+    # rails 4 has removed it.
+    # config.assets.initialize_on_precompile = false
 
     config.assets.precompile += %w(active_admin.css active_admin/print.css active_admin.js)
     config.assets.precompile += %w(impress-domo.cs impress.js presentation.js.coffee)
@@ -46,7 +47,7 @@ module CrazyStudio
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
 
-    # config.time_zone = 'Tokyo'
+    config.time_zone = 'Tokyo'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
