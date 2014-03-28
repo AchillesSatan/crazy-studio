@@ -12,3 +12,16 @@
  *=# require_tree .
  */
 @import "bootstrap";
+
+body { 
+  padding-top: 70px;
+}
+
+.navbar-nav > li > .m-nav-gravatar {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.navbar-inverse {
+  background-color: rgb(27, 27, 36);
+}
