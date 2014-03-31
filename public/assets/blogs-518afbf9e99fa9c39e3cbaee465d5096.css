@@ -1,7 +1,5 @@
-// Place all the styles related to the Blogs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
+@charset "UTF-8";
+/* line 5, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/blogs.css.scss */
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
@@ -9,13 +7,14 @@ h1 {
   margin-bottom: 50px;
 }
 
+/* line 12, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/blogs.css.scss */
 .bg {
   -webkit-background-size: 100% 100%;
-  background-color: rgb(238, 174, 147);
+  background-color: #eeae93;
   background-image: url('<%= asset_path("background_4.jpg") %>');
   background-size: 100% 100%;
   bottom: 0px;
-  color: rgb(40, 40, 40);
+  color: #282828;
   display: block;
   font-family: 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Microsoft YaHei', '微软雅黑';
   font-size: 14px;
@@ -30,8 +29,9 @@ h1 {
   width: 100%;
 }
 
+/* line 33, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/blogs.css.scss */
 .p-bd {
-  color: rgb(40, 40, 40);
+  color: #282828;
   display: block;
   font-family: 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Microsoft YaHei', '微软雅黑';
   font-szie: 14px;
@@ -40,8 +40,9 @@ h1 {
   position: relative;
 }
 
+/* line 43, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/blogs.css.scss */
 .g-hd {
-  color: rgb(255, 255, 255);
+  color: white;
   display: block;
   font-family: 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Microsoft YaHei', '微软雅黑';
   font-size: 14px;
@@ -54,21 +55,23 @@ h1 {
   width: 100%;
 }
 
+/* line 57, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/blogs.css.scss */
 .img-circle {
   margin-bottom: 20px;
 }
 
+/* line 61, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/blogs.css.scss */
 .g-mn {
   -webkit-background-clip: border-box;
   -webkit-backgtound-origin: padding-box;
   -webkit-background-size: auto;
   background-attachment: scroll;
   background-clip: border-box;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   background-image: none;
   background-origin: padding-box;
   background-size: auto;
-  color: rgb(40, 40, 40);
+  color: #282828;
   display: block;
   font-family: 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Microsoft YaHei', '微软雅黑';
   font-size: 14px;
@@ -79,14 +82,17 @@ h1 {
   width: 100%;
 }
 
+/* line 82, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/blogs.css.scss */
 .blog {
   margin: 20px;
 }
 
+/* line 86, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/blogs.css.scss */
 .blog-title {
   text-align: center;
 }
 
+/* line 90, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/blogs.css.scss */
 .blog-body {
   text-align: left;
 }
