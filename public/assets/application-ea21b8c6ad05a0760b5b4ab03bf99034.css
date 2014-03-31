@@ -7607,18 +7607,56 @@ button.close {
     display: none !important;
   }
 }
-/* line 17, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/application.css.scss */
+/* line 28, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/application.css.scss */
+html {
+  overflow-y: scroll;
+}
+
+/* line 32, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/application.css.scss */
 body {
   padding-top: 70px;
 }
 
-/* line 21, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/application.css.scss */
+/* header */
+/* line 38, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/application.css.scss */
 .navbar-nav > li > .m-nav-gravatar {
   padding-top: 0px;
   padding-bottom: 0px;
 }
 
-/* line 26, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/application.css.scss */
+/* line 43, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/application.css.scss */
 .navbar-inverse {
   background-color: #1b1b24;
+}
+
+/* footer */
+/* line 49, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/application.css.scss */
+.footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999999;
+}
+/* line 55, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/application.css.scss */
+.footer a {
+  color: #555555;
+}
+/* line 58, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/application.css.scss */
+.footer a:hover {
+  color: #222222;
+  background-color: 10px;
+}
+/* line 64, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/application.css.scss */
+.footer small {
+  float: left;
+}
+/* line 68, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/application.css.scss */
+.footer ul {
+  float: right;
+  list-style: none;
+}
+/* line 71, /Users/zhang_yunjie/Workspace/workspace/crazy-studio/app/assets/stylesheets/application.css.scss */
+.footer ul li {
+  float: left;
+  margin-left: 10px;
 }
