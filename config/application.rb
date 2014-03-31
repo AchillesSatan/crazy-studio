@@ -26,6 +26,7 @@ module CrazyStudio
 
     config.assets.precompile += %w(active_admin.css active_admin/print.css active_admin.js)
     config.assets.precompile += %w(impress-demo.css impress.js presentation.js.coffee)
+    config.assets.precompile += %w(blogs.css)
 
     # client = Dalli::Client.new((ENV["MEMCACHIER_SERVERS"] || "").split(","),
     #                            :username => ENV["MEMCACHIER_USERNAME"],
