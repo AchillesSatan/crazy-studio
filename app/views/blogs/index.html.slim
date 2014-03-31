@@ -1,21 +1,10 @@
-h1 Listing blogs
+= stylesheet_link_tag "blogs"
 
-table
-  tr
-    th Title
-    th Body
-    th
-    th
-    th
+h1 Crazy Studio
 
-  - @blogs.each do |blog|
-    tr
-      td = blog.title
-      td = blog.body
-      td = link_to 'Show', blog
-      td = link_to 'Edit', edit_blog_path(blog)
-      td = link_to 'Destroy', blog, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Blog', new_blog_path
+- @blogs.each do |blog|
+  div.blog
+    div.blog-title
+      = blog.title
+    div.blog-body
+      = blog.body

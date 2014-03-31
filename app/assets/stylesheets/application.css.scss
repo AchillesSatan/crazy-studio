@@ -13,9 +13,26 @@
  */
 @import "bootstrap";
 
+$grayMediumLight: #eaeaea;
+$grayLight: #999;
+$gray: #555;
+$grayDarker: #222;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
 body { 
   padding-top: 70px;
 }
+
+/* header */
 
 .navbar-nav > li > .m-nav-gravatar {
   padding-top: 0px;
@@ -24,4 +41,35 @@ body {
 
 .navbar-inverse {
   background-color: rgb(27, 27, 36);
+}
+
+/* footer */
+
+.footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $grayMediumLight;
+  color: $grayLight;
+
+  a {
+    color: $gray;
+
+    &:hover {
+      color: $grayDarker;
+      background-color: 10px;
+    }
+  }
+
+  small {
+    float: left;
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
 }
