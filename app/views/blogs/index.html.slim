@@ -15,7 +15,16 @@
       - @blogs.each do |blog|
         div.blog
           div.blog-title
-            = blog.title
+            h3 = blog.title
+          div.blog-label
+            span
+              i.glyphicon.glyphicon-time
+              |&nbsp;
+              = blog.updated_at.strftime("%Y-%m-%d")
+            span
+              i.glyphicon.glyphicon-user
+              |&nbsp;
+              = blog.title
           div.blog-body
             = blog.body
 
