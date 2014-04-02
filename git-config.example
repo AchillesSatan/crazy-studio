@@ -1,0 +1,14 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = false
+[remote "heroku"]
+	url = git@heroku.com:crazy-studio.git
+	fetch = +refs/heads/*:refs/remotes/heroku/*
+[remote "origin"]
+	url = git@github.com:AchillesSatan/crazy-studio.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[user]
