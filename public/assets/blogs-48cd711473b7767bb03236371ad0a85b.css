@@ -9,7 +9,7 @@ h1 {
 .bg {
   -webkit-background-size: 100% 100%;
   background-color: rgb(238, 174, 147);
-  background-image: url('<%= asset_path("background_4.jpg") %>');
+  background-image: url('/assets/background_4-0341e7e2ebdbdaf6eacc3ce7413df0d5.jpg');
   background-size: 100% 100%;
   bottom: 0px;
   color: rgb(40, 40, 40);
@@ -86,8 +86,4 @@ h1 {
 
 .blog-body {
   text-align: left;
-}
-
-.user-label {
-  margin-left: 20px;
 }
