@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
   include User::BlogModule
 
   def role?(r)
-    role.include? r.to_s
+    role.include? r.to_s unless role.nil?
   end
 end

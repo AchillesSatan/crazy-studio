@@ -2,7 +2,7 @@ module User::BlogModule
   extend ActiveSupport::Concern
 
   included do
-    has_many :user_blogs
+    has_many :user_blogs, :dependent => :destroy
   end
     
   def user_blog(blog)

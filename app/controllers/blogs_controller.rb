@@ -29,6 +29,7 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       if @blog.save
+        current_user.user_blog(@blog)
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
         format.json { render action: 'show', status: :created, location: @blog }
       else
