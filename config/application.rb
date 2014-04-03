@@ -24,8 +24,9 @@ module CrazyStudio
     # rails 4 has removed it.
     # config.assets.initialize_on_precompile = false
 
-    config.assets.precompile += %w(*.js *.css)
-    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.assets.precompile += %w(active_admin.css active_admin/print.css active_admin.js)
+    config.assets.precompile += %w(impress-demo.css impress.js presentation.js.coffee)
+    config.assets.precompile += %w(blogs.css)
 
     # client = Dalli::Client.new((ENV["MEMCACHIER_SERVERS"] || "").split(","),
     #                            :username => ENV["MEMCACHIER_USERNAME"],
