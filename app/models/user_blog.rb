@@ -1,4 +1,4 @@
 class UserBlog < ActiveRecord::Base
   belongs_to :user
-  belongs_to :blog, :dependent => :destroy
+  belongs_to :blog
 end

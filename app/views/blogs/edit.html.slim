@@ -1,8 +1,8 @@
-h1 Editing blog
+= stylesheet_link_tag "blogs"
 
-== render 'form'
-
-= link_to 'Show', @blog
-'|
-= link_to 'Back', blogs_path
+.contaner.new-blog
+  .col-md-2
+  .col-md-8
+    == render 'form'
+  .col-md-2
 
