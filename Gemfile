@@ -77,6 +77,8 @@ group :development do
   gem 'binding_of_caller'
 end
 
+gem 'rails_kindeditor'
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
