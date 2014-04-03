@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :has_auth?, only: [:create]
   skip_before_action :verify_authenticity_token, only: [:create, :update]
 
   # GET /blogs
@@ -25,6 +26,7 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
+
     @blog = Blog.new(blog_params)
 
     respond_to do |format|
@@ -72,5 +74,12 @@ class BlogsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
       params.require(:blog).permit(:title, :body)
+    end
+
+    def has_auth?
+      if current_user.nil?
+        redirect_to root_path
+        return
+      end
     end
 end
