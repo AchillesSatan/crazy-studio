@@ -2,7 +2,11 @@ CrazyStudio::Application.routes.draw do
   devise_for :users
   # devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :blogs
+  resources :blogs do
+    collection do
+      get :tags, as: :tags
+    end
+  end
 
   resources :presentations, only: [] do
     collection do
@@ -15,7 +19,6 @@ CrazyStudio::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root :to => "blogs#index"
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -65,6 +65,17 @@ class BlogsController < ApplicationController
     end
   end
 
+  def tags
+    query = params[:q]
+    @tags = ActsAsTaggableOn::Tag.where('tags.name like ?', "%#{query}%")
+
+    if @tags.empty?
+      return render :json => [{id: "#{query}", name: "New: \"#{query}\""}]
+    else
+      render json: @tags
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
