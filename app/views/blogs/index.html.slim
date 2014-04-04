@@ -26,10 +26,17 @@
                     i.glyphicon.glyphicon-user
                     |&nbsp;
                     = blog.user_blog.user.name
-                  span
+                  span.user-label
                     i.glyphicon.glyphicon-time
                     |&nbsp;Last Updated:&nbsp;
                     = blog.updated_at.strftime("%Y-%m-%d")
+                  span.user-label
+                    i.glyphicon.glyphicon-paperclip
+                    - blog.tag_list.each do |tag|
+                      |&nbsp;
+                      = link_to tag, '#'
+                      - if tag != blog.tag_list.last
+                        |,&nbsp;
                 div.blog-body
                   = raw blog.body
         .col-md-2
