@@ -9,9 +9,10 @@ p#notice = notice
     p
       = raw @blog.body
 
-    = link_to 'Edit', edit_blog_path(@blog)
-    '|
     = link_to 'Back', blogs_path
-    '|
-    = link_to 'Destroy', @blog, data: {:confirm => 'Are you sure?'}, :method => :delete
+    - if can? :manage, current_user
+      '|
+      = link_to 'Edit', edit_blog_path(@blog)
+      '|
+      = link_to 'Destroy', @blog, data: {:confirm => 'Are you sure?'}, :method => :delete
   .col-md-2
