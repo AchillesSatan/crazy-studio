@@ -21,14 +21,14 @@
                 h3 
                   strong = link_to blog.title, blog
               div.blog-label
+                span.user-label
+                  i.glyphicon.glyphicon-user
+                  |&nbsp;
+                  = blog.user_blog.user.name
                 span
                   i.glyphicon.glyphicon-time
                   |&nbsp;Last Updated:&nbsp;
                   = blog.updated_at.strftime("%Y-%m-%d")
-                span.user-label
-                  i.glyphicon.glyphicon-user
-                  |&nbsp;
-                  = blog.user_blog.user.email
               div.blog-body
                 = raw blog.body
       .col-md-2
