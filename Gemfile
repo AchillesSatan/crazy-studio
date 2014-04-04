@@ -79,6 +79,8 @@ end
 
 gem 'rails_kindeditor'
 
+gem 'acts-as-taggable-on'
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
