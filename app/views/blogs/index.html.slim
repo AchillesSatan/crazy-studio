@@ -9,26 +9,29 @@
     = link_to( image_tag(gravatar("heroku@crazy-studio.com", 140, ""), size: "150x150", class: "img-circle"), root_path)
     h2 すべての出会いが美しいとは限らない。すべての別れが悲しいとは言えない。
 
-  .g-mn
-    .container
-      .col-md-2
+  - unless @blogs.empty?
+    .g-mn
+      .container
+        .col-md-2
 
-      .col-md-8
-        .blog-panel
-          - @blogs.each do |blog|
-            div.blog
-              div.blog-title
-                h3 
-                  strong = link_to blog.title, blog
-              div.blog-label
-                span.user-label
-                  i.glyphicon.glyphicon-user
-                  |&nbsp;
-                  = blog.user_blog.user.name
-                span
-                  i.glyphicon.glyphicon-time
-                  |&nbsp;Last Updated:&nbsp;
-                  = blog.updated_at.strftime("%Y-%m-%d")
-              div.blog-body
-                = raw blog.body
-      .col-md-2
+        .col-md-8
+          .blog-panel
+            - @blogs.each do |blog|
+              div.blog
+                div.blog-title
+                  h3
+                    strong = link_to blog.title, blog
+                div.blog-label
+                  span.user-label
+                    i.glyphicon.glyphicon-user
+                    |&nbsp;
+                    = blog.user_blog.user.name
+                  span
+                    i.glyphicon.glyphicon-time
+                    |&nbsp;Last Updated:&nbsp;
+                    = blog.updated_at.strftime("%Y-%m-%d")
+                div.blog-body
+                  = raw blog.body
+        .col-md-2
+
+      = render partial: "layouts/footer"
