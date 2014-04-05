@@ -1,4 +1,4 @@
 json.tags @tag do |tag|
-  json.id tag.id
+  json.id tag.name
   json.name tag.name
 end

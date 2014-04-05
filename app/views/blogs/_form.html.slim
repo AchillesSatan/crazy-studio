@@ -11,7 +11,7 @@
   .field.blog-tags
     = f.text_field :tag_list, class: "form-control new-blog-tag", id: "tag-input", placeholder: "Tags"
   .field
-    = f.kindeditor :body, :width => 930, :height => 400, :resizeType => 0
+    = f.kindeditor :body, :width => "100%", :height => 400, :resizeType => 0
   .actions = f.submit 'Save', class: "btn btn-primary btn-lg btn-save"
   = button_to 'Cancel', blogs_path, class: "btn btn-warning btn-lg btn-cancel"
 

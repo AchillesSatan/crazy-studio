@@ -72,7 +72,7 @@ class BlogsController < ApplicationController
     if @tags.empty?
       return render :json => [{id: "#{query}", name: "New: \"#{query}\""}]
     else
-      render json: @tags
+      render :json => @tags.map{|t| {:id => t.name, :name => t.name }}
     end
   end
 
