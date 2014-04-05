@@ -1,0 +1,1 @@
+(function(){jQuery(function(){return $("#tag-input").tokenInput("/blogs/tags.json",{theme:"facebook",allowCustomEntry:!0,preventDuplicates:!0,prePopulate:$("#tag-input").data("load")})})}).call(this);
