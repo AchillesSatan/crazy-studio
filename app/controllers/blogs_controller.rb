@@ -6,7 +6,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all.order(created_at: :desc).limit(10)
+    @blogs = Blog.all.order(created_at: :desc).limit(10).includes(:user_blog => {:user => []})
   end
 
   # GET /blogs/1
