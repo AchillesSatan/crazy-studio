@@ -12,6 +12,10 @@ Spork.prefork do
   require 'rspec/rails'
   require 'rspec/autorun'
 
+  require 'simplecov'
+  require 'simplecov-rcov'
+  SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
+  SimpleCov.start 'rails'
   # require "sidekiq/testing"
   # Sidekiq::Testing.fake!
   # RSpec::Sidekiq.configure do |config|

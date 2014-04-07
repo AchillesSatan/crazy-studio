@@ -63,6 +63,7 @@ group :developemnt, :test do
   gem 'delorean'
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'simplecov-rcov'
   gem 'spork', '1.0.0rc3'
   gem 'guard'
   gem 'guard-spork'
