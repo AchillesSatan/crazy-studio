@@ -78,6 +78,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'bullet'
   gem 'ruby-growl'
+  gem 'annotate'
 end
 
 gem 'rails_kindeditor'
