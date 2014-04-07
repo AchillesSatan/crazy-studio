@@ -47,8 +47,6 @@ gem 'rack-cache'
 gem 'dalli'
 gem 'kgio'
 
-gem 'rails-erd'
-
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'cancan'
@@ -79,6 +77,7 @@ group :development do
   gem 'bullet'
   gem 'ruby-growl'
   gem 'annotate'
+  gem 'rails-erd'
 end
 
 gem 'rails_kindeditor'
