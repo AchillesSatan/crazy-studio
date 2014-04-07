@@ -18,7 +18,8 @@ describe BlogsController do
 
   describe "POST 'create' with authenticate" do
     it "returns index" do
-      sign_in FactoryGirl.create(:user)
+      @user = FactoryGirl.create(:user)
+      sign_in @user
       post 'create', @params = { blog: FactoryGirl.attributes_for(:blog) }
       response.should redirect_to(:action => 'show', :id => Blog.last.id)
     end

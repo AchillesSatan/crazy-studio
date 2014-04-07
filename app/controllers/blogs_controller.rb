@@ -89,8 +89,7 @@ class BlogsController < ApplicationController
 
     def has_auth?
       if current_user.nil?
-        redirect_to root_path
-        return
+        return redirect_to root_path
       end
     end
 end
