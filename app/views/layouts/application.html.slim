@@ -8,9 +8,8 @@ html
 
   body
     = render partial: "layouts/header"
-    p
-      = notice
-      = alert
+
+    = render partial: "layouts/warn"
 
     = yield
 

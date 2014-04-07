@@ -1,0 +1,9 @@
+div.container
+  - unless notice.nil?
+    .alert.alert-info.alert-dismissable
+      button.close type="button" data-dismiss="alert" aria-hidden="true" &times;
+      = notice
+  - unless alert.nil?
+    .alert.alert-warn.alert-dismissable
+      button.close type="button" data-dismiss="alert" aria-hidden="true" &times;
+      = alert
