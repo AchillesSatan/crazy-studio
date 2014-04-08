@@ -5,6 +5,7 @@ CrazyStudio::Application.routes.draw do
   resources :blogs do
     collection do
       get :tags, as: :tags
+      get :home
     end
   end
 
