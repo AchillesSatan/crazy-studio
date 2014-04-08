@@ -33,7 +33,7 @@
                   span.user-label
                     i.glyphicon.glyphicon-paperclip
                     - blog.tag_list.each do |tag|
-                      |&nbsp;Tags&nbsp;
+                      |&nbsp;Tags:&nbsp;
                       = link_to tag, '#'
                       - if tag != blog.tag_list.last
                         |,&nbsp;

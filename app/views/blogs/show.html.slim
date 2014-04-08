@@ -1,10 +1,16 @@
+= stylesheet_link_tag "blogs"
+
 .container
   .col-md-2
   .col-md-8
-    p
-      h3
-        strong = @blog.title
-    p
+    h3
+      strong = @blog.title
+    i
+      | Created by 
+      = @blog.user_blog.user.name
+      | &nbsp;at 
+      = @blog.created_at.strftime("%Y-%m-%d")
+    .blog-show
       = raw @blog.body
 
     = link_to 'Back', blogs_path
