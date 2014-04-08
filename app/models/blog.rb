@@ -14,6 +14,7 @@ class Blog < ActiveRecord::Base
   validates :title, :presence => true
   validates :body, :presence => true
   has_one :user_blog, :dependent => :destroy
+  belongs_to :section
 
   acts_as_taggable
 end

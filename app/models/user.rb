@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   include User::BlogModule
+  include User::SectionModule
 
   def role?(r)
     role.include? r.to_s unless role.nil?

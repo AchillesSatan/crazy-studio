@@ -32,11 +32,18 @@
                     = blog.updated_at.strftime("%Y-%m-%d")
                   span.user-label
                     i.glyphicon.glyphicon-paperclip
+                    |&nbsp;Tags:&nbsp;
                     - blog.tag_list.each do |tag|
-                      |&nbsp;Tags:&nbsp;
                       = link_to tag, '#'
                       - if tag != blog.tag_list.last
                         |,&nbsp;
+                  span.user-label
+                    i.glyphicon.glyphicon-folder-open
+                    |&nbsp;Section:&nbsp;
+                    - unless blog.section.nil?
+                      = blog.section.name
+                    - else
+                      | --
                 div.blog-body
                   = raw blog.body
         .col-md-2

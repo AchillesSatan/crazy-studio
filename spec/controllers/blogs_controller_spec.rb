@@ -11,7 +11,7 @@ describe BlogsController do
 
   describe "POST 'create' without authenticate" do
     it "redirect to root" do
-      post 'create', @params = { blog: FactoryGirl.attributes_for(:blog) }
+      post 'create', @params = { blog: FactoryGirl.attributes_for(:blog), section: FactoryGirl.attributes_for(:section)}
       response.should redirect_to(root_path)
     end
   end
@@ -20,7 +20,7 @@ describe BlogsController do
     it "returns index" do
       @user = FactoryGirl.create(:user)
       sign_in @user
-      post 'create', @params = { blog: FactoryGirl.attributes_for(:blog) }
+      post 'create' ,@params = { blog: FactoryGirl.attributes_for(:blog), section: FactoryGirl.attributes_for(:section)}
       response.should redirect_to(:action => 'show', :id => Blog.last.id)
     end
   end

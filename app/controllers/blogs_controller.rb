@@ -21,17 +21,25 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1/edit
   def edit
+    @section = @blog.section
   end
 
   # POST /blogs
   # POST /blogs.json
   def create
 
-    @blog = Blog.new(blog_params)
+    # @blog = Blog.new(blog_params)
+    unless section_params[:name].nil?
+      @section = Section.find_or_create_by(name: section_params[:name])
+    end
+    @blog = @section.blogs.build(title: blog_params[:title], body: blog_params[:body], tag_list: blog_params[:tag_list])
 
     respond_to do |format|
       if @blog.save
         current_user.user_blog(@blog)
+        unless @section.nil?
+          current_user.user_section(@section)
+        end
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
         format.json { render action: 'show', status: :created, location: @blog }
       else
@@ -46,6 +54,13 @@ class BlogsController < ApplicationController
   def update
     respond_to do |format|
       if @blog.update(blog_params)
+        if section_params[:name].nil?
+          @blog.update(section_id: nil)
+        else
+          section = Section.find_or_create_by(name: section_params[:name])
+          @blog.update(section_id: section.id)
+        end
+
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
         format.json { head :no_content }
       else
@@ -85,6 +100,10 @@ class BlogsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
       params.require(:blog).permit(:title, :body, :tag_list)
+    end
+
+    def section_params
+      params.require(:section).permit(:name)
     end
 
     def has_auth?

@@ -14,7 +14,7 @@
       = raw @blog.body
 
     = link_to 'Back', blogs_path
-    - if can? :manage, current_user
+    - if signed_in?
       '&nbsp;|
       = link_to 'Edit', edit_blog_path(@blog)
       '&nbsp;|

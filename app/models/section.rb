@@ -1,3 +1,6 @@
 class Section < ActiveRecord::Base
-  validates :name, presence: true, uniqueness: false
+  has_many :blogs
+  has_one :user_section, :dependent => :destroy
+
+  validates :name, presence: true, uniqueness: true
 end
