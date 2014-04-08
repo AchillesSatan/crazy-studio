@@ -24,7 +24,7 @@
                 div.blog-label
                   span.user-label
                     i.glyphicon.glyphicon-user
-                    |&nbsp;
+                    |&nbsp;Author:&nbsp;
                     = blog.user_blog.user.name
                   span.user-label
                     i.glyphicon.glyphicon-time
@@ -33,7 +33,7 @@
                   span.user-label
                     i.glyphicon.glyphicon-paperclip
                     - blog.tag_list.each do |tag|
-                      |&nbsp;
+                      |&nbsp;Tags&nbsp;
                       = link_to tag, '#'
                       - if tag != blog.tag_list.last
                         |,&nbsp;
