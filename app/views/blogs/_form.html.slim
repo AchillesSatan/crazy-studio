@@ -9,7 +9,13 @@
   .field.blog-title
     = f.text_field :title, class: "form-control new-blog-title", placeholder: "Title"
   .field.blog-tags
-    = f.text_field :tag_list, class: "form-control new-blog-tag", id: "tag-input", placeholder: "Tags"
+    strong
+      | Tags
+    = f.text_field :tag_list, class: "form-control new-blog-tag", id: "tag-input"
+  .field.blog-sections
+    strong
+      | Sections
+    = f.text_field :title, class: "form-control new-blog-section", id: "section-input"
   .field
     = f.kindeditor :body, :width => "100%", :height => 400, :resizeType => 0
   .actions = f.submit 'Save', class: "btn btn-primary btn-lg btn-save"
