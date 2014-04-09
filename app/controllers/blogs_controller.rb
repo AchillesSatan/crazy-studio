@@ -9,6 +9,11 @@ class BlogsController < ApplicationController
     @blogs = Blog.all.order(created_at: :desc).limit(10).includes(:user_blog => {:user => []}, :section => [])
   end
 
+  # GET /home
+  # GET /home.json
+  def home
+  end
+
   # GET /blogs/1
   # GET /blogs/1.json
   def show
