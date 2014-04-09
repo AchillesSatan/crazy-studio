@@ -82,6 +82,8 @@ end
 
 gem 'rails_kindeditor'
 
+gem 'truncate_html'
+
 gem 'acts-as-taggable-on'
 
 # Use Capistrano for deployment

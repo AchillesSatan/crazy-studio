@@ -6,12 +6,13 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all.order(created_at: :desc).limit(10).includes(:user_blog => {:user => []}, :section => [])
+    @blogs = Blog.all.order(created_at: :desc).group_by{|t|t.created_at.strftime("%Y-%m")}
   end
 
   # GET /home
   # GET /home.json
   def home
+    @blogs = Blog.all.order(created_at: :desc).limit(10).includes(:user_blog => {:user => []}, :section => [])
   end
 
   # GET /blogs/1

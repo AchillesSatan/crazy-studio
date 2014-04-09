@@ -15,38 +15,18 @@
         .col-md-2
 
         .col-md-8
-          .blog-panel
-            - @blogs.each do |blog|
-              div.blog
-                div.blog-title
-                  h3
-                    strong = link_to blog.title, blog
-                div.blog-label
-                  span.user-label
-                    i.glyphicon.glyphicon-user
-                    |&nbsp;Author:&nbsp;
-                    = blog.user_blog.user.name
-                  span.user-label
-                    i.glyphicon.glyphicon-time
-                    |&nbsp;Last Updated:&nbsp;
-                    = blog.updated_at.strftime("%Y-%m-%d")
-                  span.user-label
-                    i.glyphicon.glyphicon-paperclip
-                    |&nbsp;Tags:&nbsp;
-                    - blog.tag_list.each do |tag|
-                      = link_to tag, '#'
-                      - if tag != blog.tag_list.last
-                        |,&nbsp;
-                  span.user-label
-                    i.glyphicon.glyphicon-folder-open
-                    |&nbsp;Section:&nbsp;
-                    - unless blog.section.nil?
-                      = blog.section.name
-                    - else
-                      | --
-                div.blog-body
-                  / = raw blog.body
-                  = safe_render(inline: blog.body)
+          ul.blog_index
+            - @blogs.keys.each do |key|
+                li
+                  = key
+                - @blogs[key].each do |key_blog|
+                    li
+                      span.M
+                        = key_blog.created_at.strftime("%m")
+                      span.D
+                        = key_blog.created_at.strftime("%d")
+                      span.T
+                        = key_blog.title
         .col-md-2
 
       = render partial: "layouts/footer"

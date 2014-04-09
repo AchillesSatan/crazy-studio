@@ -1,1 +1,52 @@
-Hello World!
+= stylesheet_link_tag "application"
+= stylesheet_link_tag "blogs"
+
+.bg
+
+.p-bd
+
+  .g-hd
+    = link_to( image_tag(gravatar("heroku@crazy-studio.com", 140, ""), size: "150x150", class: "img-circle"), root_path)
+    h2 すべての出会いが美しいとは限らない。すべての別れが悲しいとは言えない。
+
+  - unless @blogs.empty?
+    .g-mn
+      .container
+        .col-md-2
+
+        .col-md-8
+          .blog-panel
+            - @blogs.each do |blog|
+              div.blog
+                div.blog-title
+                  h3
+                    strong = link_to blog.title, blog
+                div.blog-label
+                  span.user-label
+                    i.glyphicon.glyphicon-user
+                    |&nbsp;Author:&nbsp;
+                    = blog.user_blog.user.name
+                  span.user-label
+                    i.glyphicon.glyphicon-time
+                    |&nbsp;Created At:&nbsp;
+                    = blog.created_at.strftime("%Y-%m-%d")
+                div.blog-body
+                  = safe_render(inline: truncate_html(blog.body))
+                div.blog-panel
+                  span.user-label
+                    i.glyphicon.glyphicon-paperclip
+                    |&nbsp;Tags:&nbsp;
+                    - blog.tag_list.each do |tag|
+                      = link_to tag, '#'
+                      - if tag != blog.tag_list.last
+                        |,&nbsp;
+                  span.user-label
+                    i.glyphicon.glyphicon-folder-open
+                    |&nbsp;Section:&nbsp;
+                    - unless blog.section.nil?
+                      = blog.section.name
+                    - else
+                      | --
+        .col-md-2
+
+      = render partial: "layouts/footer"
