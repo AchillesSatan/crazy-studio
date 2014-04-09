@@ -45,7 +45,8 @@
                     - else
                       | --
                 div.blog-body
-                  = raw blog.body
+                  / = raw blog.body
+                  = safe_render(inline: blog.body)
         .col-md-2
 
       = render partial: "layouts/footer"
