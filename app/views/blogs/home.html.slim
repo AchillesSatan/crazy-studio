@@ -12,7 +12,7 @@
   - unless @blogs.empty?
     .g-mn
       .container
-        .col-md-2
+        .col-md-1
 
         .col-md-8
           .blog-panel
@@ -47,6 +47,13 @@
                       = blog.section.name
                     - else
                       | --
-        .col-md-2
+        .col-md-3
+          .list-group
+            - @sections.each do |section|
+                - if section.blogs.count != 0
+                  = link_to "#", :class => "list-group-item" do
+                    = section.name
+                    span.badge
+                      = section.blogs.count
 
       = render partial: "layouts/footer"
