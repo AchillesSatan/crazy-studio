@@ -44,16 +44,19 @@
                     i.glyphicon.glyphicon-folder-open
                     |&nbsp;Section:&nbsp;
                     - unless blog.section.nil?
-                      = blog.section.name
+                      = link_to blog.section.name, '#'
                     - else
                       | --
         .col-md-3
-          .list-group
-            - @sections.each do |section|
-                - if section.blogs.count != 0
-                  = link_to "#", :class => "list-group-item" do
-                    = section.name
-                    span.badge
-                      = section.blogs.count
+          .panel.panel-primary
+            .panel-heading Sections
+            .panel-body
+              .list-group
+                - @sections.each do |section|
+                    - if section.blogs.count != 0
+                      = link_to "#", :class => "list-group-item" do
+                        = section.name
+                        span.badge
+                          = section.blogs.count
 
       = render partial: "layouts/footer"
