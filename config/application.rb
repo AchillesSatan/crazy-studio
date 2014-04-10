@@ -28,6 +28,7 @@ module CrazyStudio
     config.assets.precompile += %w(impress-demo.css impress.js presentation.js.coffee)
     config.assets.precompile += %w(blogs.css blogs.js blogs_show.js)
     config.assets.precompile += %w(token_input.css token-input-facebook.css jquery.tokeninput.js)
+    config.assets.precompile += %w(back_to_top.css back_to_top.js)
 
     # client = Dalli::Client.new((ENV["MEMCACHIER_SERVERS"] || "").split(","),
     #                            :username => ENV["MEMCACHIER_USERNAME"],
