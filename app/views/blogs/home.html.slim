@@ -1,5 +1,8 @@
 = stylesheet_link_tag "application"
 = stylesheet_link_tag "blogs"
+= stylesheet_link_tag "back_to_top"
+
+= javascript_include_tag "back_to_top"
 
 .bg
 
@@ -47,6 +50,7 @@
                       = link_to blog.section.name, '#'
                     - else
                       | --
+
         .col-md-3
           .panel.panel-primary
             .panel-heading Sections
@@ -58,5 +62,9 @@
                         = section.name
                         span.badge
                           = section.blogs.count
+        p#back-top
+          a href="#" 
+            span
+            | Back to Top
 
       = render partial: "layouts/footer"

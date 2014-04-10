@@ -26,7 +26,7 @@
                       span.D
                         = key_blog.created_at.strftime("%d")
                       span.T
-                        = key_blog.title
+                        = link_to key_blog.title, key_blog
         .col-md-2
 
       = render partial: "layouts/footer"
