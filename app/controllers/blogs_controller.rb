@@ -36,10 +36,13 @@ class BlogsController < ApplicationController
   def create
 
     # @blog = Blog.new(blog_params)
-    unless section_params[:name].nil?
+    if section_params[:name].empty?
+      @section = nil
+      @blog = Blog.new(title: blog_params[:title], body: blog_params[:body], tag_list: blog_params[:tag_list])
+    else
       @section = Section.find_or_create_by(name: section_params[:name])
+      @blog = @section.blogs.build(title: blog_params[:title], body: blog_params[:body], tag_list: blog_params[:tag_list])
     end
-    @blog = @section.blogs.build(title: blog_params[:title], body: blog_params[:body], tag_list: blog_params[:tag_list])
 
     respond_to do |format|
       if @blog.save
