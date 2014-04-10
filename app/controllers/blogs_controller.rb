@@ -34,27 +34,27 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
-
-    # @blog = Blog.new(blog_params)
-    if section_params[:name].empty?
-      @section = nil
-      @blog = Blog.new(title: blog_params[:title], body: blog_params[:body], tag_list: blog_params[:tag_list])
-    else
-      @section = Section.find_or_create_by(name: section_params[:name])
-      @blog = @section.blogs.build(title: blog_params[:title], body: blog_params[:body], tag_list: blog_params[:tag_list])
-    end
-
-    respond_to do |format|
-      if @blog.save
-        current_user.user_blog(@blog)
-        unless @section.nil?
-          current_user.user_section(@section)
-        end
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @blog }
+    ActiveRecord::Base.transaction do
+      if section_params[:name].empty?
+        @section = nil
+        @blog = Blog.new(title: blog_params[:title], body: blog_params[:body], tag_list: blog_params[:tag_list])
       else
-        format.html { render action: 'new' }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
+        @section = Section.find_or_create_by(name: section_params[:name])
+        @blog = @section.blogs.build(title: blog_params[:title], body: blog_params[:body], tag_list: blog_params[:tag_list])
+      end
+
+      respond_to do |format|
+        if @blog.save!
+          current_user.user_blog(@blog)
+          unless @section.nil?
+            current_user.user_section(@section)
+          end
+          format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
+          format.json { render action: 'show', status: :created, location: @blog }
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @blog.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -64,8 +64,10 @@ class BlogsController < ApplicationController
   def update
     respond_to do |format|
       if @blog.update(blog_params)
-        if section_params[:name].nil?
-          @blog.update(section_id: nil)
+        if section_params[:name].empty?
+          unless @blog.section_id.nil?
+            @blog.update(section_id: nil)
+          end
         else
           section = Section.find_or_create_by(name: section_params[:name])
           @blog.update(section_id: section.id)
