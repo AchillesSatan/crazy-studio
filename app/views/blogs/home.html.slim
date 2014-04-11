@@ -58,7 +58,7 @@
               .list-group
                 - @sections.each do |section|
                     - if section.blogs.count != 0
-                      = link_to "#", :class => "list-group-item" do
+                      = link_to section, :class => "list-group-item" do
                         = section.name
                         span.badge
                           = section.blogs.count
