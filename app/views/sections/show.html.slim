@@ -1,0 +1,17 @@
+= stylesheet_link_tag "application"
+= stylesheet_link_tag "blogs"
+
+.container
+  .col-md-2
+
+  .col-md-8
+    ul.blog_index
+      - @blogs.each do |blog|
+          li
+            span.M
+              = blog.created_at.strftime("%m")
+            span.D
+              = blog.created_at.strftime("%d")
+            span.T
+              = link_to blog.title, blog
+  .col-md-2

@@ -47,7 +47,7 @@
                     i.glyphicon.glyphicon-folder-open
                     |&nbsp;Section:&nbsp;
                     - unless blog.section.nil?
-                      = link_to blog.section.name, '#'
+                      = link_to blog.section.name, blog.section
                     - else
                       | --
 
