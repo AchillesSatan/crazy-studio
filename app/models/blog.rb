@@ -17,4 +17,6 @@ class Blog < ActiveRecord::Base
   belongs_to :section
 
   acts_as_taggable
+
+  scope :by_join_date, order("created_at ASC")
 end
