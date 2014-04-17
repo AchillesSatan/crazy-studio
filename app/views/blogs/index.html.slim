@@ -16,17 +16,15 @@
 
         .col-md-8
           ul.blog_index
-            - @blogs.keys.each do |key|
+            - @blogs.each do |blog|
                 li
-                  = key
-                - @blogs[key].each do |key_blog|
-                    li
-                      span.M
-                        = key_blog.created_at.strftime("%m")
-                      span.D
-                        = key_blog.created_at.strftime("%d")
-                      span.T
-                        = link_to key_blog.title, key_blog
+                  span.M
+                    = blog.created_at.strftime("%m")
+                  span.D
+                    = blog.created_at.strftime("%d")
+                  span.T
+                    = link_to blog.title, blog
+          = will_paginate @blogs
         .col-md-2
 
       = render partial: "layouts/footer"

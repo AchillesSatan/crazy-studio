@@ -6,7 +6,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all.order(created_at: :desc).group_by{|t|t.created_at.strftime("%Y-%m")}
+    @blogs = Blog.paginate(:page => params[:page], :per_page => 10).order(created_at: :desc)
   end
 
   # GET /home
