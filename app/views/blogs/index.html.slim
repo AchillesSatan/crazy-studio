@@ -24,7 +24,7 @@
                     = blog.created_at.strftime("%d")
                   span.T
                     = link_to blog.title, blog
-          = will_paginate @blogs
+          = will_paginate_bootstrap @blogs, :previous_label => "<<", :next_label => ">>"
         .col-md-2
 
       = render partial: "layouts/footer"
